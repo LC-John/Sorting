@@ -1,6 +1,6 @@
 # Sorting
 
-One sorting algorithm a day, keeps bugs away.
+A sorting algorithm a day, keeps bugs away.
 
 ## Bubble Sort
 
