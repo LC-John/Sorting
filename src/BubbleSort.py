@@ -13,7 +13,7 @@ import os, shutil
 import imageio
 import matplotlib.pyplot as plt
 
-size = 10
+size = 8
 arr = None
 
 def BubbleSort(a, reverse=False):
