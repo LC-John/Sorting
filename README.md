@@ -16,3 +16,15 @@ for (int i = 0; i < arr.length; i++)
 ```
 
 ![bubble](./images/BubbleSort.gif)
+
+## Bogo Sort (Monkey Sort)
+
+![donkeykong](./images/DonkeyKong.jpg)
+
+```c
+while(!Sorted(arr))
+    Shuffle(arr);
+```
+
+![bubble](./images/BogoSort.gif)
+

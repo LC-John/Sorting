@@ -13,7 +13,7 @@ import os, shutil
 import imageio
 import matplotlib.pyplot as plt
 
-size = 20
+size = 10
 arr = None
 
 def BubbleSort(a, reverse=False):
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     os.mkdir(tmp_dir)
     for i in range(len(proc)):
         plt.cla()
-        plt.bar(x=list(range(size)),
+        plt.bar(list(range(size)),
                 height=proc[i],
                 width=0.5)
         plt.savefig(os.path.join(tmp_dir, ("%d.jpg" % i)))
