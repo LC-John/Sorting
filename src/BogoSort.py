@@ -58,6 +58,8 @@ if __name__ == "__main__":
         plt.bar(list(range(size)),
                 height=proc[i],
                 width=0.5)
+        plt.xlim([-1, len(arr)])
+        plt.ylim([-0.01, 1.01])
         plt.savefig(os.path.join(tmp_dir, ("%d.jpg" % i)))
         img_buf.append(imageio.imread(os.path.join(tmp_dir, ("%d.jpg" % i))))
         print ("\r%d / %d" % (i+1, len(proc)), end="")

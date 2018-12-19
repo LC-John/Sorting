@@ -38,3 +38,30 @@ for (int i = 0; i < arr.length; i++)
 ```
 
 ![bubble](./images/SleepSort.gif)
+
+## Stooge Sort
+
+Three stooges **do not** top one wise.
+
+```c
+ARRAY StoogeSort (ARRAY arr, int begin, int end)
+{
+	if(compare(arr[begin], arr[end-1]) < 0)
+	{
+    	arr[begin] = arr[begin] ^ arr[end-1];
+        arr[end-1] = arr[begin] ^ arr[end-1];
+        arr[begin] = arr[begin] ^ arr[end-1];
+	}
+    if (end-begin >= 3)
+    {
+        one_third = (end - begin) / 3;
+        arr = StoogeSort(arr, begin, begin+2*one_third);
+        arr = StoogeSort(arr, begin+one_third, end);
+        arr = StoogeSort(arr, begin, begin+2*one_third);
+    }
+    return arr;
+}
+```
+
+![bubble](./images/StoogeSort.gif)
+
