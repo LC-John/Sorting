@@ -28,3 +28,13 @@ while(!Sorted(arr))
 
 ![bubble](./images/BogoSort.gif)
 
+## Sleep Sort
+
+**zzzZZZ**
+
+```c
+for (int i = 0; i < arr.length; i++)
+    res.append(SleepThread(arr[i]).start());
+```
+
+![bubble](./images/SleepSort.gif)
