@@ -26,21 +26,25 @@ def Sleep(num):
 
 class SleepThread (threading.Thread):
     
-    def __init__(self, num, proc, res):
+    def __init__(self, num, proc, res, reverse=False, maxval=1):
         
         threading.Thread.__init__(self)
         self.__num = num
         self.__res = res
         self.__proc = proc
+        self.__reverse = reverse
+        self.__maxval = maxval
         
     def run(self):
         
-        Sleep(self.__num)
+        if self.__reverse:
+            Sleep(self.__num)
+        else:
+            Sleep(self.__maxval-self.__num)
         self.__res.append(self.__num)
         self.__proc.append(copy.deepcopy(self.__res))
-        print(self.__num)
     
-def SleepSort(a, reverse=False):
+def SleepSort(a, reverse=False, maxval=1):
     
     a = copy.deepcopy(a)
     l = len(a)
@@ -50,7 +54,7 @@ def SleepSort(a, reverse=False):
     
     proc.append(copy.deepcopy(a))
     for i in range(l):
-        threads.append(SleepThread(a[i], proc, res))
+        threads.append(SleepThread(maxval-a[i], proc, res, reverse, maxval))
     for i in range(l):
         threads[i].start()
     for i in range(l):
