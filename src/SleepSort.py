@@ -54,7 +54,7 @@ def SleepSort(a, reverse=False, maxval=1):
     
     proc.append(copy.deepcopy(a))
     for i in range(l):
-        threads.append(SleepThread(maxval-a[i], proc, res, reverse, maxval))
+        threads.append(SleepThread(a[i], proc, res, reverse, maxval))
     for i in range(l):
         threads[i].start()
     for i in range(l):
