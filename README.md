@@ -46,12 +46,12 @@ Three stooges **do not** top one wise.
 ```c
 ARRAY StoogeSort (ARRAY arr, int begin, int end)
 {
-	if(compare(arr[begin], arr[end-1]) < 0)
-	{
+    if(compare(arr[begin], arr[end-1]) < 0)
+    {
     	arr[begin] = arr[begin] ^ arr[end-1];
         arr[end-1] = arr[begin] ^ arr[end-1];
         arr[begin] = arr[begin] ^ arr[end-1];
-	}
+    }
     if (end-begin >= 3)
     {
         one_third = (end - begin) / 3;
@@ -65,3 +65,26 @@ ARRAY StoogeSort (ARRAY arr, int begin, int end)
 
 ![bubble](./images/StoogeSort.gif)
 
+## Slow Sort
+
+Divide **without** conquer
+
+```C
+ARRAY SlowSort(ARRAY arr, int begin, int end)
+{
+    if (begin >= end)
+        return arr;
+    int mid = floor((begin+end)/2);
+    arr = SlowSort(arr, begin, mid);
+    arr = SlowSort(arr, mid+1, end);
+    if (Compare(arr[mid], arr[end]) < 0)
+    {
+        arr[mid] = arr[mid] ^ arr[end];
+        arr[end] = arr[mid] ^ arr[end];
+        arr[mid] = arr[mid] ^ arr[end];
+    }
+    return SlowSort(arr, begin, end-1);
+}
+```
+
+![SlowSort](./images/SlowSort.gif)
